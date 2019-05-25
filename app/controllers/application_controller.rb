@@ -25,4 +25,8 @@ class ApplicationController < ActionController::Base
     )
     render json: response
   end
+
+  def new_session_path(scope)
+    new_user_session_path
+  end
 end

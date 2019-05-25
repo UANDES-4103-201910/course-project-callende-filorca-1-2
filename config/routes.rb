@@ -15,14 +15,18 @@ Rails.application.routes.draw do
   resources :blacklists
   resources :admin_profiles
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
 	post '/users/new' => "users#create"
 	put '/users/:id' => "users#update"
 	delete '/users/:id' => "users#destroy"
 	get '/users/:id' => "users#show"
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+  devise_scope :user do
+    get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+  
 	post '/posts/new' => "posts#create"
 	put '/posts/:id' => "posts#update"
 	delete '/posts/:id' => "posts#destroy"

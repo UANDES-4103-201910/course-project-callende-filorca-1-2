@@ -33,7 +33,6 @@
              </div>
   					<form class="form-horizontal" method="post" action="#">
               <%= render 'form', user: @user %>
-              <%= link_to 'Sign In', registrations_path %>
   					</form>
   				</div>
         </div>
@@ -43,7 +42,7 @@
 			</div>
 
 		</div>
-
+		<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
 		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 	</body>
 </html>
