@@ -1,0 +1,39 @@
+<!doctype html>
+<head><tittle>HOldassdaQL</tittle></head>
+<p id="notice"><%= notice %></p>
+
+<h1>Admin Profiles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Password</th>
+      <th>Type</th>
+      <th>Lastname</th>
+      <th>Location</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_profiles.each do |admin_profile| %>
+      <tr>
+        <td><%= admin_profile.name %></td>
+        <td><%= admin_profile.email %></td>
+        <td><%= admin_profile.password %></td>
+        <td><%= admin_profile.type %></td>
+        <td><%= admin_profile.lastname %></td>
+        <td><%= admin_profile.location %></td>
+        <td><%= link_to 'Show', admin_profile %></td>
+        <td><%= link_to 'Edit', edit_admin_profile_path(admin_profile) %></td>
+        <td><%= link_to 'Destroy', admin_profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Admin Profile', new_admin_profile_path %>

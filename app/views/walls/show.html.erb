@@ -1,0 +1,38 @@
+<% title "Wall" %>
+<a class="btn btn-blog pull-right marginBottom10" href="/posts/new">CREATE NEW</a>
+<<div class="container">
+
+
+  <div class="col-md-10 blogShort">
+
+      <h1>Post 1</h1>
+        <img class = "image_wall" src="https://www.mallsyoutletsvivo.cl/vivo-imperio/wp-content/uploads/sites/4/2018/07/logo-Movistar.jpg" width= 100px height=100px >
+        <article class= "parrafo"><p>
+        Texto a mostrar para dar una idea de lo se refiere el post....
+        </p></article>
+        <a class="btn btn-blog pull-right marginBottom10" href="/posts/<%= @wall.user_id %>">READ MORE</a>
+
+  </div>
+
+  <div class="col-md-10 blogShort">
+    <h1>Post 2</h1>
+    <img class = "image_wall" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Logo_HP.PNG/250px-Logo_HP.PNG" width= 110px height=100px >
+    <article class= "parrafo"><p>
+    Texto a mostrar para dar una idea de lo se refiere el post....
+    </p></article>
+    <a class="btn btn-blog pull-right marginBottom10" href="/posts/<%= @wall.user_id %>">READ MORE</a>
+    </div>
+
+    <div class="col-md-10 blogShort">
+    <h1>Post 3</h1>
+    <img class = "image_wall" src="https://upload.wikimedia.org/wikipedia/commons/7/70/Logo_Apple.inc.gif" width= 90px height=100px >
+    <article class= "parrafo"><p>
+    Texto a mostrar para dar una idea de lo se refiere el post....
+    </p></article>
+    <a class="btn btn-blog pull-right marginBottom10" href="/posts/<%= @wall.user_id %>">READ MORE</a>
+    </div>
+  </div>
+
+
+
+</div>

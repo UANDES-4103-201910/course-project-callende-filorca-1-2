@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin_profile: one
+  super_admin: one
+
+two:
+  admin_profile: two
+  super_admin: two
