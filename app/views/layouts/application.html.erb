@@ -36,8 +36,12 @@
           <a class="navbar-brand" href="/top">Top</a>
         </ul>
         <ul class="navbar-header navbar-right">
-          
-          <a class="navbar-brand" href="/sign">Sign In/Up</a>
+          <% if user_signed_in? %>
+            <a><%= link_to('Logout', destroy_user_session_path, method: :post, class: "btn btn-outline-primary ml-2") %></a>
+            <%= current_user.email %>
+          <% else %>
+            <a class="navbar-brand" href="/sign">Sign In/Up</a>
+          <% end %>
         </ul>
       </div>
     </nav>
