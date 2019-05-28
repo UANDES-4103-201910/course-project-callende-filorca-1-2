@@ -35,6 +35,11 @@
         <ul class="navbar-header">
           <a class="navbar-brand" href="/top">Top</a>
         </ul>
+        <% if user_signed_in? %>
+        <ul class="navbar-header">
+            <a class="navbar-brand" href="/posts/new">New Post</a>
+        </ul>
+          <% end %>
         <ul class="navbar-header navbar-right">
           <% if user_signed_in? %>
             <a><%= link_to(current_user.email, "/users/#{current_user.id}" ,class: "navbar-brand") %></a>

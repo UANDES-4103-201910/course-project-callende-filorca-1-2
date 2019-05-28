@@ -1,21 +1,27 @@
 <% title "Home" %>
 <h1 id="titleHome">Most recent posts</h1>
-<div class="col-md-6">
+<tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <div class="col-md-6">
         <div class="well well-sm">
             <div class="row">
                 <div class="col-xs-3 col-md-3 text-center">
-                    <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                        class="img-rounded img-responsive" />
+                <%
+=begin%>
+ <%= image_tag(post.image, style:'width:100%')  if @user.image.attached?%>  
+<%
+=end%>
                 </div>
                 <div class="col-xs-9 col-md-9 section-box">
-                        <a  href="/posts/1"  <h2>Facebook</h2> </a>                    <p>
-                        Here are the different claims made by users.</p>
+                        <a  href="/posts/<%= post.id %>"  <h2><%= post.title%></h2> </a>                   
+                        <p><%= post.description%></p>
                     <hr />
                     <div class="row rating-desc">
                         <div class="col-md-12">
                             <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
                             </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                            </span><span class="glyphicon glyphicon-heart"></span>(994)<span class="separator">|</span>
+                            </span><span class="glyphicon glyphicon-heart"></span>ACA VAN LOS LIKESSSSSSSS<span class="separator">|</span>
                             <span class="glyphicon glyphicon-comment"></span>(100 Comments)
                         </div>
                     </div>
@@ -23,121 +29,5 @@
             </div>
         </div>
     </div>
-    <div class="col-md-6">
-        <div class="well well-sm">
-            <div class="row">
-                <div class="col-xs-3 col-md-3 text-center">
-                    <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                        class="img-rounded img-responsive" />
-                </div>
-                <div class="col-xs-9 col-md-9 section-box">
-                  <a  href="/posts/1"  <h2>Facebook</h2> </a>
-
-                    <p>
-                        Here are the different claims made by users.</p>
-                    <hr />
-                    <div class="row rating-desc">
-                        <div class="col-md-12">
-                            <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                            </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                            </span><span class="glyphicon glyphicon-heart"></span>(104827)<span class="separator">|</span>
-                            <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-3 col-md-3 text-center">
-                        <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                            class="img-rounded img-responsive" />
-                    </div>
-                    <div class="col-xs-9 col-md-9 section-box">
-                            <a  href="/posts/1"  <h2>Facebook</h2> </a>                            </span></a>
-                        <p>
-                            Here are the different claims made by users.</p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span>(49)<span class="separator">|</span>
-                                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="well well-sm">
-                <div class="row">
-                    <div class="col-xs-3 col-md-3 text-center">
-                        <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                            class="img-rounded img-responsive" />
-                    </div>
-                    <div class="col-xs-9 col-md-9 section-box">
-                            <a  href="/posts/1"  <h2>Facebook</h2> </a>                        <p>
-                            Here are the different claims made by users.</p>
-                        <hr />
-                        <div class="row rating-desc">
-                            <div class="col-md-12">
-                                <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                </span><span class="glyphicon glyphicon-heart"></span>(491)<span class="separator">|</span>
-                                <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-                <div class="well well-sm">
-                    <div class="row">
-                        <div class="col-xs-3 col-md-3 text-center">
-                            <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                                class="img-rounded img-responsive" />
-                        </div>
-                        <div class="col-xs-9 col-md-9 section-box">
-                                <a  href="/posts/1"  <h2>Facebook</h2> </a>                            <p>
-                                Here are the different claims made by users.</p>
-                            <hr />
-                            <div class="row rating-desc">
-                                <div class="col-md-12">
-                                    <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                    </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                    </span><span class="glyphicon glyphicon-heart"></span>(40)<span class="separator">|</span>
-                                    <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="well well-sm">
-                    <div class="row">
-                        <div class="col-xs-3 col-md-3 text-center">
-                            <img src="https://www.sccpre.cat/png/big/0/2_facebook-logo-png.png" alt="facebook"
-                                class="img-rounded img-responsive" />
-                        </div>
-                        <div class="col-xs-9 col-md-9 section-box">
-                                <a  href="/posts/1"  <h2>Facebook</h2> </a>                            <p>
-                                Here are the different claims made by users.</p>
-                            <hr />
-                            <div class="row rating-desc">
-                                <div class="col-md-12">
-                                    <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                    </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                                    </span><span class="glyphicon glyphicon-heart"></span>(455)<span class="separator">|</span>
-                                    <span class="glyphicon glyphicon-comment"></span>(100 Comments)
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        </tr>
+      <% end %>
