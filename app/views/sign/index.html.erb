@@ -20,6 +20,27 @@
 		<title>Admin</title>
 	</head>
 	<body>
+			  	<div class="panel-heading">
+			    	<h3 class="panel-title">Login</h3>
+			 	</div>
+			  	<div class="panel-body">
+					<%= link_to "Logiasdadsadadn", new_user_session_path, :class => 'navbar-link'  %>
+            <%= form_for(:user, url: new_user_session_path) do |f| %>
+             <div class="form-group">
+               <%= f.label :email,"Email" %><br />
+               <%= f.email_field :email, autofocus: true  %>
+             </div>
+
+             <div class="form-group">
+               <%= f.label :password, "Password" %><br />
+               <%= f.password_field :password, autocomplete: "off"  %>
+             </div>
+             <div class="actions">
+               <%= f.submit "Log In" %>
+						</div>
+						<br>
+						<% end %>
+
 		<div class="container">
       <div class="row main">
 

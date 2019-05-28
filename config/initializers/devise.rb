@@ -303,6 +303,10 @@ client_secret = '922_uYzEyeDp6sPCR_rtCtor'
 
 # Configure Google omniauth with proper scope
 config.omniauth :google_oauth2, client_id, client_secret, {
-  scope: "contacts.readonly,userinfo.email"
+  scope: 'userinfo.email, userinfo.profile',
+  prompt: 'select_account',
+  image_aspect_ratio: 'square',
+  image_size: 50, 
+  skip_jwt: true
 }
 end

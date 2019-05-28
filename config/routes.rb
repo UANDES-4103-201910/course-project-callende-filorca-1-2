@@ -20,10 +20,14 @@ Rails.application.routes.draw do
 	delete '/users/:id' => "users#destroy"
 	get '/users/:id' => "users#show"
 
+  post '/login', to: 'sessions#create', as: :log_in
+
+  
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   devise_scope :user do
     get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session
+    post 'login', :to => 'devise/sessions#create', :as => :new_user_session_page
     post 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
