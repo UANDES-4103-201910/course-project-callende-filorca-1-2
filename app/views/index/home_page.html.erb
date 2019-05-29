@@ -1,8 +1,24 @@
+<% if notice %>
+<%
+=begin%>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+        $("#notice").hide("slow");
+
+});
+</script> 
+<%
+=end%>
+
+<div id="notice"><%= notice %></div>
+
+
+<%end%>
 <% title "Home" %>
 <h1 id="titleHome">Most recent posts</h1>
-<tbody>
       <% @posts.each do |post| %>
-        <tr>
           <div class="col-md-6">
         <div class="well well-sm">
             <div class="row">
@@ -29,5 +45,4 @@
             </div>
         </div>
     </div>
-        </tr>
       <% end %>
