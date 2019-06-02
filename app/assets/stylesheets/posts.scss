@@ -36,6 +36,36 @@ label small {
 }
 
 //post_area
+input[type=text], select {
+width: 100%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+//width: 100%;
+margin-top: 0%;
+width: fit-content ;
+position: relative;
+border-color: #ff4900!important;
+background-color: #ffd9b3!important;
+color: #ff4900!important;
+}
+
 
 .post_area {
   border: 2px;

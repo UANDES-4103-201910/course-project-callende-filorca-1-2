@@ -11,50 +11,71 @@
     </div>
   <% end %>
 <!--DESDE AQUI -->
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-6 col-md-offset-0">
+
+      <!-- Checkbox -->
+      <div class="[ form-group ]">
+        <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning" autocomplete="off" />
+        <div class="[ btn-group ]">
+            <label for="fancy-checkbox-warning" class="[ btn btn-warning ]">
+                <span class="[ glyphicon glyphicon-ok ]"></span>
+                <span> </span>
+            </label>
+            <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
+                Closed Post
+            </label>
+        </div>
+      </div>
 
 
-  <div class="col-md-6 col-md-offset-0">
 
-  <div class="form-group">
-      <label for="title">Title <span class="require">*</span></label>
-     <!-- <input type="text" class="form-control" name="title" /> -->
-      <input type="text" class="form-control" name="post[title]" id="post_title">
-  </div>
 
-  <div class="form-group">
-      <label for="location">Location <span class="require">*</span></label>
-      <!-- <input type="text" class="form-control" name="location" /> -->
-      <input type="text" class="form-control" name="post[location]" id="post_location">
-  </div>
+          <h4> Title </h4>
+          <%= form.text_field :title %>
 
-  <div class="form-group">
-      <label for="country">Country <span class="require">*</span></label>
-      <!--<input type="text" class="form-control" name="country" />-->
-      <input type="text" class="form-control" name="post[country]" id="post_country">
-  </div>
+          <h4> Location </h4>
+          <%= form.text_field :location %>
 
-  <div class="form-group">
-      <label for="city">City <span class="require">*</span></label>
-      <!--<input type="text" class="form-control" name="city" />-->
-      <input type="text" class="form-control" name="post[city]" id="post_city">
-  </div>
+          <h4> Country </h4>
+          <%= form.text_field :country %>
 
-  <div class="form-group">
-      <label for="description">Description <span class="require">*</span></label>
-      <textarea rows="5" class="form-control" name="post[description]" id="post_description"></textarea>
-      <!--<input type="text" class="form-control" name="post[description]" id="post_description">-->
-  </div>
+          <h4> City </h4>
+          <%= form.text_field :city %>
 
-  <div class="form-group">
-      <p><span class="require">*</span> - required fields</p>
-  </div>
+          <h4> Description </h4>
+          <%= form.text_area :description, rows:"5" %>
 
-  <div class="form-group">
-      <input type="submit" name="commit" value="Create Post" data-disable-with="Create Post"  class="btn btn-primary">
-      <a type="submit" class="btn btn-primary" href="/">Cancel</a>
+          <br><br>
+          <div class="field">
 
-  </div>
-  </div>
+                <%= form.hidden_field :user_id, value: current_user.id %>
+              </div>
+
+              
+
+              <div class="actions">
+                <%= form.submit "Create", class: "btn btn-primary"%>
+                <a  class="btn btn-primary" href="/posts/<%= @post.id %>">Cancel</a>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
 
 
 
@@ -62,7 +83,6 @@
 
   <h1>Add File</h1>
 
-  <form action="" method="POST">
 
       <div class="form-group">
         <div class ="form_group">
@@ -94,7 +114,8 @@
           </figure>
       </div>
 
-  </form>
+</div>
+</div>
 </div>
 
 <% end %>

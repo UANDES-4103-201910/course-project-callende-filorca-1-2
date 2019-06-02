@@ -1,25 +1,6 @@
 <% title "Post" %>
 <div class="container">
-	<div class="row">
+<h1>Create post</h1>
+</div>
 
-
-
-    		<h1>Create post</h1>
-
-    		<form action="" method="POST">
-
-					<!-- Checkbox -->
-					<div class="[ form-group ]">
-            <input type="checkbox" name="fancy-checkbox-warning" id="fancy-checkbox-warning" autocomplete="off" />
-            <div class="[ btn-group ]">
-                <label for="fancy-checkbox-warning" class="[ btn btn-warning ]">
-                    <span class="[ glyphicon glyphicon-ok ]"></span>
-                    <span> </span>
-                </label>
-                <label for="fancy-checkbox-warning" class="[ btn btn-default active ]">
-                    Closed Post
-                </label>
-            </div>
-        </div>
-			</div>
-				<%= render 'form', post: @post %>
+<%= render 'form', post: @post %>
