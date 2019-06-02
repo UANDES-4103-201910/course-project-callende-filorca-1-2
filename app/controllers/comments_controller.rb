@@ -75,7 +75,7 @@ class CommentsController < ApplicationController
 
     def set_post_comment
       #@comment = @post.comments.find_by!(id: params[:id]) if @post_text
-      #@post = Post.find(params[:post_id])
+      @post = Post.find(params[:post_id]) if @post
     end
 
 

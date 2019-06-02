@@ -46,7 +46,7 @@
           <%= form.text_field :city %>
 
           <h4> Description </h4>
-          <%= form.text_area :description, rows:"5" %>
+          <%= form.text_area :description, rows:"5", :placeholder  => "Description" %>
 
           <br><br>
           <div class="field">
@@ -54,19 +54,12 @@
                 <%= form.hidden_field :user_id, value: current_user.id %>
               </div>
 
-              
+
 
               <div class="actions">
                 <%= form.submit "Create", class: "btn btn-primary"%>
                 <a  class="btn btn-primary" href="/posts/<%= @post.id %>">Cancel</a>
               </div>
-
-
-
-
-
-
-
 
 
 
