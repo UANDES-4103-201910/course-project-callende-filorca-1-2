@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'top/index'
-	get 'users/:id' => "users#show"
   get 'users/index'
   root "posts#index"
   resources :comments

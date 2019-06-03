@@ -10,33 +10,29 @@
       </ul>
     </div>
   <% end %>
+  <div class="container">
+    <div class="row">
 
-  <div class="field">
-    <%= form.label :text %>
-    <%= form.text_field :text %>
-  </div>
+      <h4> Comment </h4>
+      <%= form.text_area :text, rows:"5", :placeholder  => "Text" %>
 
-  <div class="field">
-    <%= form.label :link %>
-    <%= form.text_field :link %>
-  </div>
+        <div class="field">
+              <%= form.hidden_field :user_id, value: current_user.id %>
+              <%= form.hidden_field :post_id, value: "#{params[:post_id]}" %>
+            </div>
 
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture %>
-  </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :post_id %>
-    <%= form.text_field :post_id %>
-  </div>
+        <div class="actions">
+          <%= form.submit "Create", class: "btn btn-primary" %>
+          <a  class="btn btn-primary" href="/posts/<%= @post %>">Cancel</a>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+            <h3> Add File</h3>
+            <%= form.file_field :image, direct_upload: true %>
+        </div>
+
+
+      </div>
+
 <% end %>

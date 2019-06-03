@@ -1,29 +1,22 @@
- 
+<div class="container">
+ <div class="row">
+     <div class="col8">
+        <div class="post_area">
 
-<p>
-  <strong>Text:</strong>
-  <%= @comment.text %>
-</p>
+          <div class="form-group">
+            <h2> Comment: </h2>
+            <br>
+            <%= @comment.text %>
+          </div>
+          <a><%= link_to('Back to Post', '/posts/'+Post.find(@comment.post_id).id.to_s )%></a>
+        </div>
 
-<p>
-  <strong>Link:</strong>
-  <%= @comment.link %>
-</p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @comment.picture %>
-</p>
 
-<p>
-  <strong>User:</strong>
-  <%= @comment.user %>
-</p>
 
-<p>
-  <strong>Post:</strong>
-  <%= @comment.post %>
-</p>
 
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>

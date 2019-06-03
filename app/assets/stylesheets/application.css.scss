@@ -16,7 +16,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-  
+
+
  .cuadros {
      background-color:#FBF5EF;
      margin-top: 10%;
@@ -30,7 +31,7 @@
    }
    .cuadrosSign{
      float: right;
-   
+
    }
    .cuadrosLogin{
      float: left;
@@ -49,7 +50,7 @@
    .user-row {
      margin-bottom: 14px;
  }
- 
+
  .panel {
    border-color: #ff4900!important;
  }
@@ -58,36 +59,36 @@
    background-color: #ffd9b3!important;
    color: #ff4900!important;
  }
- 
+
  .btn-primary{
    border-color: #ff4900!important;
    background-color: #ffd9b3!important;
    color: #ff4900!important;
  }
- 
+
  .user-row:last-child {
      margin-bottom: 0;
  }
- 
+
  .dropdown-user {
      margin: 13px 0;
      padding: 5px;
      height: 100%;
  }
- 
+
  .dropdown-user:hover {
      cursor: pointer;
  }
- 
+
  .table-user-information > tbody > tr {
      border-top: 1px solid rgb(221, 221, 221);
  }
- 
+
  .table-user-information > tbody > tr:first-child {
      border-top: 0;
  }
- 
- 
+
+
  .table-user-information > tbody > tr > td {
      border-top: 0;
  }
@@ -95,48 +96,48 @@
    margin-top:20px;
  }
  //
- 
- 
+
+
  //NEW
- 
+
  body, html{
       background-repeat: no-repeat;
       font-family: 'Oxygen', sans-serif;
  }
- 
+
  .main{
    margin-top: 70px;
    border-bottom: 70px;
  }
- 
+
  h1.title {
      font-size: 50px;
      font-family: 'Passion One', cursive;
      font-weight: 400;
    text-align: center;
  }
- 
+
  hr{
      width: 10%;
      color: #fff;
  }
- 
+
  .form-group{
    width: 100%;
      margin-bottom: 15px;
      text-align: center;
      }
- 
+
  label{
      margin-bottom: 15px;
  }
- 
+
  input,
  input::-webkit-input-placeholder {
      font-size: 11px;
      padding-top: 3px;
  }
- 
+
  .main-login{
       background-color: #fff;
      /* shadows and rounded borders */
@@ -146,27 +147,27 @@
      -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
      -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
- 
+
  }
- 
+
  .main-center{
       margin-top: 15px;
       max-width: 70%px;
    padding: 40px 40px;
- 
+
  }
- 
+
  .login-button{
      margin-top: 5px;
  }
- 
+
  .login-register{
      font-size: 11px;
      text-align: center;
  }
- 
- 
- 
+
+
+
  .navbar {
    background-color: #ffffff;
  }
@@ -225,7 +226,7 @@
  .navbar .navbar-link:hover {
    color: #ff4900;
  }
- 
+
  @media (max-width: 575px) {
    .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
      color: #ff9970;
@@ -239,7 +240,7 @@
      background-color: #dedede;
    }
  }
- 
+
  @media (max-width: 767px) {
    .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
      color: #ff9970;
@@ -253,7 +254,7 @@
      background-color: #dedede;
    }
  }
- 
+
  @media (max-width: 991px) {
    .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
      color: #ff9970;
@@ -267,7 +268,7 @@
      background-color: #dedede;
    }
  }
- 
+
  @media (max-width: 1199px) {
    .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
      color: #ff9970;
@@ -281,7 +282,7 @@
      background-color: #dedede;
    }
  }
- 
+
  .navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
    color: #ff9970;
  }
@@ -293,13 +294,13 @@
    color: #ff4900;
    background-color: #dedede;
  }
- 
+
  /* The dropdown container */
  .dropdown {
    float: left;
    overflow: hidden;
  }
- 
+
  /* Dropdown button */
  .dropdown .dropbtn {
    font-size: 16px;
@@ -311,8 +312,8 @@
    font-family: inherit; /* Important for vertical align on mobile phones */
    margin: 0; /* Important for vertical align on mobile phones */
  }
- 
- 
+
+
  /* Dropdown content (hidden by default) */
  .dropdown-content {
    display: none;
@@ -322,7 +323,7 @@
    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
    z-index: 1;
  }
- 
+
  /* Links inside the dropdown */
  .dropdown-content a {
    float: none;
@@ -338,13 +339,13 @@
  }.dropdown-content a:hover {
    background-color: #ddd;
  }
- 
- 
+
+
  /* Show the dropdown menu on hover */
  .dropdown:hover .dropdown-content {
    display: block;
  }
- 
+
  input[type=email], input[type=password],input[type=text], select {
    width: 50%;
    padding: 12px 20px;
@@ -354,8 +355,8 @@
    border-radius: 4px;
    box-sizing: border-box;
  }
- 
- 
+
+
  input[type=submit] {
    width: 50%;
    background-color: #ff9970;
@@ -369,12 +370,12 @@
    align-self: center;
    cursor: pointer;
  }
- 
+
  input[type=submit]:hover {
    background-color: #ff4900;
    color: #9e1000;
  }
- 
+
  .field, .actions{
    margin:20px 0px; padding:0px;
    text-align:center;
