@@ -13,7 +13,7 @@
 						<div class="form-group">
 							<br>
 							<% if @post.user_id.present? %>
-								<a><%= link_to('Posted by: '+' '+User.find(@post.user_id).name+' '+User.find(@post.user_id).lastname, user_path(@post.user_id) ) %></a>
+								<a><%= link_to('Posted by: '+' '+User.find(@post.user_id).name+' '+User.find(@post.user_id).lastname, '/users/'+User.find(@post.user_id).id.to_s )%></a>
 							<% end %>
 						</div>
 
@@ -69,7 +69,7 @@
 
 
 
-					<% @post.comments.each do |c| %>
+					<% @post.comment.each do |c| %>
 
 
           <div class="row">

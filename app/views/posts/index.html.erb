@@ -1,56 +1,31 @@
-<head>
-  <title>Home</title>
-</head>
-<body>
-  <p id="notice"><%= notice %></p>
-  <h1>Posts</h1>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Gaaaaps</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Location</th>
-        <th>Country</th>
-        <th>Status</th>
-        <th>City</th>
-        <th>Files</th>
-        <th>State</th>
-        <th>Wall</th>
-        <th>User</th>
-        <th>Admin</th>
-        <th>Super admin</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
+<% title "Posts" %>
+<h1 id="titleHome">Most recent posts</h1>
       <% @posts.each do |post| %>
-        <tr>
-          <td><%= post.gps %></td>
-          <td><%= post.title %></td>
-          <td><%= post.description %></td>
-          <td><%= post.location %></td>
-          <td><%= post.country %></td>
-          <td><%= post.status %></td>
-          <td><%= post.city %></td>
-          <td><%= post.files %></td>
-          <td><%= post.state %></td>
-          <td><%= post.wall %></td>
-          <td><%= post.user %></td>
-          <td><%= post.admin %></td>
-          <td><%= post.super_admin %></td>
-          <td><%= link_to 'Show', post %></td>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+          <div class="col-md-6">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-xs-3 col-md-3 text-center">
+                <%
+=begin%>
+ <%= image_tag(post.image, style:'width:100%')  if @user.image.attached?%>  
+<%
+=end%>
+                </div>
+                <div class="col-xs-9 col-md-9 section-box">
+                        <a  href="/posts/<%= post.id %>"  <h2><%= post.title%></h2> </a>                   
+                        <p><%= post.description%></p>
+                    <hr />
+                    <div class="row rating-desc">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                            </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                            </span><span class="glyphicon glyphicon-heart"></span>ACA VAN LOS LIKESSSSSSSS<span class="separator">|</span>
+                            <span class="glyphicon glyphicon-comment"></span>(100 Comments)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
 
-  <br>
-
-  <%= link_to 'New Post', new_post_path %>
-
-</body>

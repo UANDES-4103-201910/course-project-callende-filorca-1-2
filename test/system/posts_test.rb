@@ -14,19 +14,13 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "New Post"
 
-    fill_in "Admin", with: @post.admin_id
     fill_in "City", with: @post.city
     fill_in "Country", with: @post.country
     fill_in "Description", with: @post.description
-    fill_in "Files", with: @post.files
-    fill_in "Gps", with: @post.gps
     fill_in "Location", with: @post.location
-    fill_in "State", with: @post.state
-    fill_in "Status", with: @post.status
-    fill_in "Super admin", with: @post.super_admin_id
+    check "State" if @post.state
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
-    fill_in "Wall", with: @post.wall_id
     click_on "Create Post"
 
     assert_text "Post was successfully created"
@@ -37,19 +31,13 @@ class PostsTest < ApplicationSystemTestCase
     visit posts_url
     click_on "Edit", match: :first
 
-    fill_in "Admin", with: @post.admin_id
     fill_in "City", with: @post.city
     fill_in "Country", with: @post.country
     fill_in "Description", with: @post.description
-    fill_in "Files", with: @post.files
-    fill_in "Gps", with: @post.gps
     fill_in "Location", with: @post.location
-    fill_in "State", with: @post.state
-    fill_in "Status", with: @post.status
-    fill_in "Super admin", with: @post.super_admin_id
+    check "State" if @post.state
     fill_in "Title", with: @post.title
     fill_in "User", with: @post.user_id
-    fill_in "Wall", with: @post.wall_id
     click_on "Update Post"
 
     assert_text "Post was successfully updated"

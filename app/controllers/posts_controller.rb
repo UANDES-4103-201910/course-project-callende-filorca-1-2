@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  skip_before_action :verify_authenticity_token
+
   # GET /posts
   # GET /posts.json
   def index
@@ -10,14 +10,11 @@ class PostsController < ApplicationController
   # GET /posts/1
   # GET /posts/1.json
   def show
-    @comments = @post.comments
-    #@comments = @post.comments.find_by!(id: params[:id]) if @post
   end
-
 
   # GET /posts/new
   def new
-    @comment = Comment.new(post_id: params[:post_id])
+    @post = Post.new
   end
 
   # GET /posts/1/edit
@@ -72,6 +69,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:gps, :title, :description, :location, :country, :status, :city, :files, :state, :wall_id, :user_id, :admin_id, :super_admin_id)
+      params.require(:post).permit(:title, :description, :location, :country, :city, :state, :user_id, :image)
     end
 end

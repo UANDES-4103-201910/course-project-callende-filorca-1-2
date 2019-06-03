@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :set_post_comment
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
   # GET /comments
@@ -70,13 +69,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:text, :link, :picture, :user_id, :post_id, :image)
+      params.require(:comment).permit(:text, :link, :picture, :user_id, :post_id)
     end
-
-    def set_post_comment
-      #@comment = @post.comments.find_by!(id: params[:id]) if @post_text
-      @post = Post.find(params[:post_id]) if @post
-    end
-
-
 end

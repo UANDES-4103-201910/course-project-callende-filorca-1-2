@@ -8,7 +8,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '3875d2f0b3eda68f090bf708e3381d8e47c992e1293042be2669b8a2c7af2a5a704058132d1832050faa4aef918c42c243f4a0b53c1b84b87dc647b9de406793'
+  # config.secret_key = '2ae0f8f030515ea7418ac33a8616e8a1e9aed3ee2f19ae355aff53561c933496ca1ff6699579697e8ba2e2421392e336d739c086ceb0e76446871239fd29a824'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -114,7 +114,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '5fa1622f37110658fc0d5fad8e06c743a2e30b840030163433ea88dea944d532d1a6a92efe57407b8127202cecab588f6853eac6dd3020f447fece0228d816c0'
+  # config.pepper = '21fe110c032b23e4e2dabc8f9caa37464622b02f10927f41d1284cc0b34682d16a8237b2561669d5fadbc5795c0c5336b38fbd55932e74ccc5ef48c8b27c00dc'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -296,17 +296,15 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
-  # Add the credentials from your Google application to your secrets
-
-client_id = '508999574439-918ot0ji1ik2pkahuqkt0oubg27j33m4.apps.googleusercontent.com'
-client_secret = '922_uYzEyeDp6sPCR_rtCtor'
-
-# Configure Google omniauth with proper scope
-config.omniauth :google_oauth2, client_id, client_secret, {
-  scope: 'userinfo.email, userinfo.profile',
-  prompt: 'select_account',
-  image_aspect_ratio: 'square',
-  image_size: 50, 
-  skip_jwt: true
-}
-end
+  client_id = '508999574439-918ot0ji1ik2pkahuqkt0oubg27j33m4.apps.googleusercontent.com'
+  client_secret = '922_uYzEyeDp6sPCR_rtCtor'
+  
+  # Configure Google omniauth with proper scope
+  config.omniauth :google_oauth2, client_id, client_secret, {
+    scope: 'userinfo.email, userinfo.profile',
+    prompt: 'select_account',
+    image_aspect_ratio: 'square',
+    image_size: 50, 
+    skip_jwt: true
+  }
+  end

@@ -1,16 +1,19 @@
+// Place all the styles related to the Top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
 .name{
-  font-size: 22px;
-}
-#tops{
-  display: flex;
-}
-#likedP{
-  font-weight: bold;
-  color: #ff4900;
-  text-align: center;
-}
-#unlikedP{
-  font-weight: bold;
-  color: #ff4900;
-  text-align: center;
-}
+    font-size: 22px;
+  }
+  #tops{
+    display: flex;
+  }
+  #likedP{
+    font-weight: bold;
+    color: #ff4900;
+    text-align: center;
+  }
+  #unlikedP{
+    font-weight: bold;
+    color: #ff4900;
+    text-align: center;
+  }

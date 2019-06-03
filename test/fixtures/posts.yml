@@ -1,31 +1,19 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  gps: MyString
   title: MyString
   description: MyString
   location: MyString
   country: MyString
-  status: MyString
   city: MyString
-  files: MyString
-  state: MyString
-  wall: one
+  state: false
   user: one
-  admin: one
-  super_admin: one
 
 two:
-  gps: MyString
   title: MyString
   description: MyString
   location: MyString
   country: MyString
-  status: MyString
   city: MyString
-  files: MyString
-  state: MyString
-  wall: two
+  state: false
   user: two
-  admin: two
-  super_admin: two

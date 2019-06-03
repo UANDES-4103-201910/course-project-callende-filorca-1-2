@@ -1,35 +1,6 @@
-<div class="container">
-  <h1>Edit Comment</h1>
-</div>
+<h1>Editing Comment</h1>
 
-<div class="container">
-  <div class="row">
-    <%= form_with(model: [@comment], local: true) do |form|%>
-      <h4> Comment </h4>
-      <%= form.text_area :text, rows:"5", :placeholder  => "Text" %>
-
-
-      <div class="field">
-
-            <%= form.hidden_field :user_id, value: current_user.id %>
-            <%= form.hidden_field :post_id, value: 1 %>
-          </div>
-
-
-
-      <div class="actions">
-        <%= form.submit "Update", class: "btn btn-primary"%>
-        <a  class="btn btn-primary" href="/posts/<%= 1 %>">Cancel</a>
-      </div>
-
-          <h3> Add File</h3>
-          <%= form.file_field :image, direct_upload: true %>
-      </div>
-
-
-    </div>
-
-<% end %>
+<%= render 'form', comment: @comment %>
 
 <%= link_to 'Show', @comment %> |
 <%= link_to 'Back', comments_path %>
