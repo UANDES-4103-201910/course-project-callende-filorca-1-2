@@ -64,7 +64,16 @@
         <div class="container">
 					<div class="col-sm-12">
 						<h3>Comments</h3>
+
+						<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 						<%= link_to "Add Comment", new_comment_path(post_id: @post.id) %>
+						<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+						<% if pre_like %>
+						  <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+						<% else %>
+						  <%= button_to 'Like', post_likes_path(@post), method: :post %>
+						<% end %>
+
 					</div>
 
 
