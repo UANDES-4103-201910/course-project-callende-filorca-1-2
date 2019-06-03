@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   get 'top/index'
   get 'users/index'
+
   root "posts#index"
   resources :comments
+  resources :walls
   resources :posts
   resources :blacklists
   resources :top

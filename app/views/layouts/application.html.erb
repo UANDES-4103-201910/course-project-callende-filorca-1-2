@@ -16,14 +16,14 @@
 
   <body>
 
-  
 
-   
+
+
 
     <div class="logo">
       <%= image_tag("logos/rojo.png",width: '150px') %>
       <%= image_tag("logos/texto.png",width: '150px') %>
-      
+
     </div>
 
 
@@ -36,6 +36,9 @@
         <ul class="navbar-header">
           <a class="navbar-brand" href="/top">Top</a>
         </ul>
+        <ul class="navbar-header">
+          <a class="navbar-brand" href="/walls">Wall</a>
+        </ul>
         <% if user_signed_in? %>
         <ul class="navbar-header">
             <a class="navbar-brand" href="/posts/new">New Post</a>
@@ -45,7 +48,7 @@
           <% if user_signed_in? %>
             <a><%= link_to(current_user.email, "/users/edit" ,class: "navbar-brand") %></a>
             <a><%= link_to('Logout', destroy_user_session_path, method: :delete , class: "navbar-brand") %></a>
-            
+
           <% else %>
             <a class="navbar-brand" href="/users/sign_in">Sign In</a>
             <a class="navbar-brand" >/</a>
@@ -54,7 +57,7 @@
         </ul>
       </div>
     </nav>
-    
+
     <% if flash[:notice] %>
     <div class = "alert alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>

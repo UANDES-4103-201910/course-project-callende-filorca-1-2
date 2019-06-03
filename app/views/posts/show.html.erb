@@ -66,6 +66,7 @@
 						<h3>Comments</h3>
 
 						<p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
 						<%= link_to "Add Comment", new_comment_path(post_id: @post.id) %>
 						<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
 						<% if pre_like %>
@@ -73,6 +74,8 @@
 						<% else %>
 						  <%= button_to 'Like', post_likes_path(@post), method: :post %>
 						<% end %>
+						
+
 
 					</div>
 

@@ -1,0 +1,31 @@
+<% @posts = Post.all.where(:user_id => current_user.id) %>
+
+<h1 id="titleHome">Wall</h1>
+      <% @posts.each do |post| %>
+          <div class="col-md-6">
+        <div class="well well-sm">
+            <div class="row">
+                <div class="col-xs-3 col-md-3 text-center">
+                <%
+=begin%>
+ <%= image_tag(post.image, style:'width:100%')  if @user.image.attached?%>
+<%
+=end%>
+                </div>
+                <div class="col-xs-9 col-md-9 section-box">
+                        <a  href="/posts/<%= post.id %>"  <h2><%= post.title%></h2> </a>
+                        <p><%= post.description%></p>
+                    <hr />
+                    <div class="row rating-desc">
+                        <div class="col-md-12">
+                            <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                            </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
+                            </span><span class="glyphicon glyphicon-heart"></span>ACA VAN LOS LIKESSSSSSSS<span class="separator">|</span>
+                            <span class="glyphicon glyphicon-comment"></span>(100 Comments)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<% end %>
