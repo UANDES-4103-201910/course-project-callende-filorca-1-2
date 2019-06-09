@@ -14,6 +14,16 @@
  *= require_self
  */
 
+ input[type=text], select {
+ width: 100%;
+ padding: 12px 30px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+ }
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -61,6 +71,10 @@
  }
 
  .btn-primary{
+   width: 100%;
+   margin-top: 0%;
+   width: fit-content ;
+   position: relative;
    border-color: #ff4900!important;
    background-color: #ffd9b3!important;
    color: #ff4900!important;

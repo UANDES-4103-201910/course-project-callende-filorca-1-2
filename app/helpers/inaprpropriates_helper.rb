@@ -1,0 +1,2 @@
+module InaprpropriatesHelper
+end
