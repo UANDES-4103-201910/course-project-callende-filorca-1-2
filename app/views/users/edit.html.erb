@@ -1,0 +1,54 @@
+<% title "Editar Perfil" %>
+
+<div class="container">
+      <div class="row">
+      <div class="col-md-5  toppad  pull-right col-md-offset-3 ">
+       <br>
+      </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= @user.name %> <%= @user.lastname %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-3 " align="center"> <img width="150" alt="@user.picture" src="https://www.freeiconspng.com/uploads/profile-icon-9.png" class="img-circle img-responsive"> </div>
+
+                <div class=" col-md-9 col-lg-9 ">
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Biography:</td>
+                        <td><input placeholder="Type here..." type="text" name="biography" value=<%= @user.biography %>></td>
+                      </tr>
+
+                        <td>Location:</td>
+                        <td><input placeholder="Type here..." type="text" name="biography" value=<%= @user.location %>></td>
+                      <tr>
+                        <td>Country:</td>
+                        <td><input placeholder="Type here..." type="text" name="biography" value=<%= @user.country %>></td>
+                      </tr>
+                      <tr>
+                        <tr>
+                          <td>City:</td>
+                          <td><input placeholder="Type here..." type="text" name="biography" value=<%= @user.city %>></td>
+                        </tr>
+                        <tr>
+                        <td>Email</td>
+                        <td><input placeholder="Type here..." type="text" name="biography" value=<%= @user.email %>></td>
+                      </tr>
+
+
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+

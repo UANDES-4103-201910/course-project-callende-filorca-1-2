@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :blacklists
   resources :top
   match '/users',   to: 'users#index',   via: 'get'
+  match '/users/show/:id',   to: 'users#show',   via: 'get'
+  match '/users/edit/:id',   to: 'users#edit',   via: 'get'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   resources :posts do
     resources :likes

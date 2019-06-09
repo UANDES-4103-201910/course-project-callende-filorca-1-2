@@ -12,9 +12,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         
         end
     end
-    def index
-      @users = User.all
-    end
     
     
 end
