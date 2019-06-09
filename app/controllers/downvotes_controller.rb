@@ -5,7 +5,7 @@ class DownvotesController < ApplicationController
 
    def create
    if already_downvoted?
-     flash[:notice] = "You can't downvote more than once"
+     flash[:error] = "You can't downvote more than once"
    else
      @post.downvotes.create(user_id: current_user.id)
    end
@@ -16,7 +16,7 @@ class DownvotesController < ApplicationController
 
   def destroy
   if !(already_downvoted?)
-    flash[:notice] = "Cannot unDownvote"
+    flash[:error] = "Cannot unDownvote"
   else
     @downvote.destroy
   end

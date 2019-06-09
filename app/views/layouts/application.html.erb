@@ -36,9 +36,11 @@
         <ul class="navbar-header">
           <a class="navbar-brand" href="/top">Top</a>
         </ul>
+        <% if user_signed_in? %>
         <ul class="navbar-header">
           <a class="navbar-brand" href="/walls">Wall</a>
         </ul>
+        <% end %>
         <% if user_signed_in? %>
         <ul class="navbar-header">
             <a class="navbar-brand" href="/posts/new">New Post</a>

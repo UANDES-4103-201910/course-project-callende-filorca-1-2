@@ -4,7 +4,7 @@ class InappropriatesController < ApplicationController
 
   def create
   if already_inappropriated?
-    flash[:notice] = "You can't inappropriate more than once"
+    flash[:error] = "You can't inappropriate more than once"
   else
     @post.inappropriates.create(user_id: current_user.id)
   end
@@ -15,7 +15,7 @@ class InappropriatesController < ApplicationController
 
  def destroy
  if !(already_inappropriated?)
-   flash[:notice] = "Cannot mark this as appropriate"
+   flash[:error] = "Cannot mark this as appropriate"
  else
    @inappropriate.destroy
  end
