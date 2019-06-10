@@ -1,3 +1,38 @@
+<style media="screen">
+  input[type=text], select {
+  width: 100%;
+  padding: 12px 30px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  input[type=submit] {
+  width: 100%;
+  margin-top: 0%;
+  width: fit-content ;
+  position: relative;
+  border-color: #ff4900!important;
+  background-color: #ffd9b3!important;
+  color: #ff4900!important;
+  }
+
+
+
+</style>
+
 <%= form_with(model: comment, local: true) do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
@@ -13,8 +48,13 @@
   <div class="container">
     <div class="row">
 
-      <h4> Comment </h4>
+    <div class="col-ml-6">
+
+
       <%= form.text_area :text, rows:"5", :placeholder  => "Text" %>
+      <div class="form-group" align="center">
+      <%= image_tag(@comment.image, style:'width:200px')  if @comment.image.attached?%>
+      </div>
 
         <div class="field">
               <%= form.hidden_field :user_id, value: current_user.id %>
@@ -24,7 +64,7 @@
 
 
         <div class="actions">
-          <%= form.submit "Create", class: "btn btn-primary" %>
+          <%= form.submit "Submit", class: "btn btn-primary" %>
           <a  class="btn btn-primary" href="/posts/<%= @post %>">Cancel</a>
         </div>
 
@@ -32,7 +72,7 @@
             <%= form.file_field :image, direct_upload: true %>
         </div>
 
-
+        </div>
       </div>
 
 <% end %>

@@ -1,22 +1,32 @@
 <div class="container">
  <div class="row">
-     <div class="col8">
-        <div class="post_area">
 
           <div class="form-group">
             <h2> Comment: </h2>
             <br>
-            <%= @comment.text %>
-          </div>
-          <a><%= link_to('Back to Post', '/posts/'+Post.find(@comment.post_id).id.to_s )%></a>
-        </div>
+						<a><%= link_to('Posted by: '+' '+User.find(@comment.user_id).name+' '+User.find(@comment.user_id).lastname, '/users/'+User.find(@comment.user_id).id.to_s )%></a>
+            <br>
+            <br>
+            <textarea disabled> <%= @comment.text %></textarea>
+            <br>
+            <br>
+            <div class="form-group" align="center">
+
+              <%= image_tag(@comment.image, style:'width:200px')  if @comment.image.attached?%>
+            </div>
+
+        <% if current_user.present? %>
+        <% if current_user.id == @comment.user_id %>
+        <br>
+        <br>
+        	<a type="Edit" class="btn btn-primary" href="/comments/<%= @comment.id %>/edit">Edit</a>
+        <% end %>
+        <% end %>
+
+        <a type="Back" class="btn btn-primary" href="/posts/<%= @comment.post_id %>">Back</a>
+
+
 
       </div>
     </div>
   </div>
-
-
-
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
