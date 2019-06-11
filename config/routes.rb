@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'top/index'
   get 'users/index'
+  get 'term/use'
+  get 'term/service'
 
   root "posts#index"
   resources :comments
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :blacklists
   resources :top
+  resources :term
   match '/users',   to: 'users#index',   via: 'get'
   match '/users/show/:id',   to: 'users#show',   via: 'get'
   match '/users/edit/:id',   to: 'users#edit',   via: 'get'
