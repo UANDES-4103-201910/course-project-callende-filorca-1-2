@@ -4,7 +4,7 @@
           <div class="form-group">
             <h2> Comment: </h2>
             <br>
-						<a><%= link_to('Posted by: '+' '+User.find(@comment.user_id).name+' '+User.find(@comment.user_id).lastname, '/users/'+User.find(@comment.user_id).id.to_s )%></a>
+						<a><%= link_to('Posted by: '+' '+User.find(@comment.user_id).name+' '+User.find(@comment.user_id).lastname, '/users/show/'+User.find(@comment.user_id).id.to_s )%></a>
             <br>
             <br>
             <textarea disabled> <%= @comment.text %></textarea>

@@ -56,6 +56,11 @@
             <a class="navbar-brand" href="/posts/new">New Post</a>
         </ul>
           <% end %>
+	<% if user_signed_in? && current_user.sadmin?%>
+        <ul class="navbar-header">
+            <a class="navbar-brand" href="/users/">All Users</a>
+        </ul>
+        <% end %>
         <ul class="navbar-header navbar-right">
           <% if user_signed_in? %>
             <a><%= link_to(current_user.email, "/users/edit" ,class: "navbar-brand") %></a>

@@ -41,7 +41,7 @@
 						<div class="form-group">
 							<br>
 							<% if @post.user_id.present? %>
-								<a><%= link_to('Posted by: '+' '+User.find(@post.user_id).name+' '+User.find(@post.user_id).lastname, '/users/'+User.find(@post.user_id).id.to_s )%></a>
+								<a><%= link_to('Posted by: '+' '+User.find(@post.user_id).name+' '+User.find(@post.user_id).lastname, '/users/show/'+User.find(@post.user_id).id.to_s )%></a>
 							<% end %>
 						</div>
 
