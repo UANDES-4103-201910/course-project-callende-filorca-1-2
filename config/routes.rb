@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'top/index'
+  #get 'top/index'
   get 'users/index'
+  get 'use/' => "term#use"
+  get 'service/' => "term#service"
 
 
   root "posts#index"
@@ -8,7 +10,8 @@ Rails.application.routes.draw do
   resources :walls
   resources :posts
   resources :blacklists
-  resources :top
+  #resources :top
+  resources :term
 
   match '/users',   to: 'users#index',   via: 'get'
   match '/users/show/:id',   to: 'users#show',   via: 'get'
