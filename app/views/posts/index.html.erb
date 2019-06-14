@@ -21,11 +21,12 @@
         <div class="well well-sm">
             <div class="row">
                 <div class="col-xs-3 col-md-3 text-center">
-                <%
-=begin%>
- <%= image_tag(post.image, style:'width:100px')  if post.image.attached?%>
-<%
-=end%>
+                  <%if post.image.attached?%>
+                  <%= image_tag(post.image, style:'width:100px') %>
+                  <% else %>
+                  <img class="img-responsive user-photo" src="http://cdn.onlinewebfonts.com/svg/img_237724.png" style= 'width:100px'>
+                  <% end %>
+
                 </div>
                 <div class="col-xs-9 col-md-9 section-box">
                         <a  href="/posts/<%= post.id %>" > <h2><%= post.title%></h2> </a>

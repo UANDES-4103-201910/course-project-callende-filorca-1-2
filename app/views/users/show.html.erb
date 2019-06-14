@@ -1,4 +1,15 @@
 <% title "Profile" %>
+<style media="screen">
+	input[id="1"] {
+  width: 100%;
+  margin-top: 0%;
+  width: fit-content ;
+  position: relative;
+  border-color: #ff4900!important;
+  background-color: #ffd9b3!important;
+  color: #ff4900!important;
+  }
+</style>
 
 <div class="container">
       <div class="row">
@@ -46,7 +57,7 @@
                     </tbody>
                   </table>
 
-                  <%= link_to "Posts","/walls/#{@user.id}", :id => @user.id %> 
+                  <button type="submit" class="btn btn-primary"><%= link_to "Posts","/walls/#{@user.id}", :id => @user.id %></button>
 
                 </div>
               </div>
