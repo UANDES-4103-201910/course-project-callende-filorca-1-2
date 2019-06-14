@@ -1,0 +1,173 @@
+ <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <% title "Search" %>
+	</head>
+    <h1 class= "title">Search Results</h1>
+    <hr/>
+    <br>
+
+      <div class="container">
+      <%if @contadorUserName + @contadorUserLastName + @contadorUserLocation +@contadorPost + @contadorPostA+ @contadorDescription != 0 %>
+
+    <hgroup class="mb20">
+		<h2 class="lead"><strong class="text-danger"><%= @contadorPost + @contadorPostA + @contadorUserName + @contadorUserLastName + @contadorUserLocation + @contadorDescription %></strong> results were found for the search for <strong class="text-danger"><%= @search %></strong></h2>								
+	</hgroup>
+<%if @contadorPost + @contadorPostA+ @contadorDescription != 0 %>
+<h1 style="color: #ff4900; font-weight: bold">Posts</h1>
+<%if @contadorPost != 0 %>
+<h3 style="color: #F78181; font-weight: bold">By Title</h3>
+      <% @posts.each do |post| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3 ><a href="/posts/<%= post.id %>" title=""><%= post.title%></a></h3>
+                <p><%= post.description%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <%end%>
+
+    <%if @contadorDescription != 0 %>
+<h3 style="color: #F78181; font-weight: bold">By Description</h3>
+<% @postsDescription.each do |post| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="/posts/<%= post.id %>" title=""><%= post.title%></a></h3>
+                <p><%= post.description%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <% end %>
+
+    <%if  @contadorPostA != 0 %>
+    <h3 style="color: #F78181; font-weight: bold">By Author</h3>
+<% @postsAuthor.each do |post| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="/posts/<%= post.id %>" title=""><%= post.title%></a></h3>
+                <p><%= post.description%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <% end %>
+
+    <hr/>
+<%else%>
+<h1 style="color: #ff4900; font-weight: bold">No results for posts</h1>
+<%end%>
+
+
+<%if @contadorUserName + @contadorUserLastName + @contadorUserLocation != 0 %>
+
+<h1 style="color: #ff4900; font-weight: bold">Users</h1>
+<%if @contadorUserName  != 0 %>
+
+<h3 style="color: #F78181; font-weight: bold">By Name</h3>
+<% @usersN.each do |user| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="/users/show/<%= user.id %>" title=""><%= user.name %> <%= user.lastname %></a></h3>
+                <p><%= user.biography%></p>											
+                <p><%= user.location%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <% end %>
+<%if @contadorUserLastName != 0 %>
+
+<h3 style="color: #F78181; font-weight: bold">By Lastname</h3>
+
+
+<% @usersLN.each do |user| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="/users/show/<%= user.id %>" title=""><%= user.name %> <%= user.lastname %></a></h3>
+                <p><%= user.biography%></p>											
+                <p><%= user.location%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <% end %>
+<%if @contadorUserLocation != 0 %>
+
+    <h3 style="color: #F78181; font-weight: bold">By Location</h3>
+
+<% @usersL.each do |user| %>
+    <section class="col-xs-12 col-sm-6 col-md-12">
+		<article class="search-result row">
+
+			<div class="col-xs-12 col-sm-12 col-md-7 excerpet">
+				<h3><a href="/users/show/<%= user.id %>" title=""><%= user.name %> <%= user.lastname %></a></h3>
+                <p><%= user.biography%></p>											
+                <p><%= user.location%></p>											
+			</div>
+			<span class="clearfix borda"></span>
+		</article>
+	</section>
+
+   
+<% end %>
+    <br>
+    <% end %>
+
+    <%else%>
+<h1 style="color: #ff4900; font-weight: bold">No results for users</h1>
+<%end%>
+    <hr/>
+        <%else%>
+<h1 style="color: #ff4900; font-weight: bold">No results </h1>
+<%end%>
+    
+</div>
+
+
+
+    
+
+

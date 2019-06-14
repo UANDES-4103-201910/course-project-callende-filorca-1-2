@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'use/' => "term#use"
   get 'service/' => "term#service"
-
+  get 'search/' => "search#index"
 
   root "posts#index"
   resources :comments
