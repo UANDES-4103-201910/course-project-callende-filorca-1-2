@@ -1,6 +1,23 @@
+ <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+		<!-- Website CSS style -->
+		<link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+		<!-- Website Font style -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+		<!-- Google Fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+    <% title "Wall" %>
+	</head>
 <% @posts = Post.all.where(:user_id => current_user.id) %>
 
-<h1 id="titleHome">Wall</h1>
+<h1 class="title">Wall</h1>
+<hr/>
       <% @posts.each do |post| %>
           <div class="col-md-6">
         <div class="well well-sm">
@@ -13,17 +30,18 @@
 =end%>
                 </div>
                 <div class="col-xs-9 col-md-9 section-box">
-                        <a  href="/posts/<%= post.id %>"  <h2><%= post.title%></h2> </a>
+                        <a  href="/posts/<%= post.id %>" > <h2><%= post.title%></h2> </a>
                         <p><%= post.description%></p>
                     <hr />
                     <div class="row rating-desc">
                         <div class="col-md-12">
-                          <span class="glyphicon glyphicon-heart"></span>  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Upvote' : 'Upvotes'%>	<%= post.downvotes.count %> <%= (post.downvotes.count) == 1 ? 'Downvote' : 'Downvotes'%><span class="separator">|</span>
-                          <span class="glyphicon glyphicon-comment"></span>  (<%= post.comment.count %> <%= (post.comment.count) == 1 ? 'Comment' : 'Comments'%>)
-                      </div>
+                             <span class="glyphicon glyphicon-heart"></span>  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Upvote' : 'Upvotes'%>	<%= post.downvotes.count %> <%= (post.downvotes.count) == 1 ? 'Downvote' : 'Downvotes'%><span class="separator">|</span>
+                            <span class="glyphicon glyphicon-comment"></span>  (<%= post.comment.count %> <%= (post.comment.count) == 1 ? 'Comment' : 'Comments'%>)
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 <% end %>

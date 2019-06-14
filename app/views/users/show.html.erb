@@ -46,7 +46,7 @@
                     </tbody>
                   </table>
 
-                  <a href="/walls/<%= @user.id %>" class="btn btn-primary">My Posts</a>
+                  <%= link_to "Posts","/walls/#{@user.id}", :id => @user.id %> 
 
                 </div>
               </div>
