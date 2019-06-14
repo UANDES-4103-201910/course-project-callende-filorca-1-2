@@ -1,5 +1,19 @@
-<% title "Post" %>
+<head>
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
 
+	 <!-- Website CSS style -->
+	 <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
+	 <!-- Website Font style -->
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	 <!-- Google Fonts -->
+	 <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
+	 <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+
+	 <% title "Post" %>
+ </head>
 <style media="screen">
 	input[type=submit] {
   width: 100%;
@@ -28,7 +42,8 @@
 </style>
 
 <div class="container">
-	<h1>Post</h1>
+	<h1 class= "title">Post</h1>
+	<hr/>
 	<div class="row">
 
 
@@ -83,7 +98,16 @@
 
         <div class="container">
 					<div class="col-sm-12">
+						<div class="col-2">
+							<br>
+						<% if current_user.present? %>
+						<% if current_user.id == @post.user_id || current_user.sadmin %>
+							<a type="submit" class="btn btn-primary" href="/posts/<%= @post.id %>/edit">Edit</a>
+						<% end %>
+						<% end %>
+						</div>
 						<h2>Comments</h2>
+
 						<div class="container-grid">
 						<% if user_signed_in? %>
 						<h4><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Upvote' : 'Upvotes'%>	<%= @post.downvotes.count %> <%= (@post.downvotes.count) == 1 ? 'Downvote' : 'Downvotes'%>	<%= @post.inappropriates.count %> <%= (@post.inappropriates.count) == 1 ? 'Inappropriate' : 'Inappropriates'%></h4>
@@ -211,9 +235,5 @@
 	</div>
 </div>
 
-<% if current_user.present? %>
-<% if current_user.id == @post.user_id %>
-	<a type="submit" class="btn btn-primary" href="/posts/<%= @post.id %>/edit">Edit</a>
-<% end %>
-<% end %>
+
 </div>
