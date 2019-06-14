@@ -4,9 +4,10 @@
   <h1>All Users</h1>
     <br>
 <% @users.each do |user| %>
-
+  <h4><%= user.name+' '+user.lastname %></h4>
   <%= link_to user.email,'/users/show/'+user.id.to_s %>
-  <br/>
+  <br>
+  <br>
 <% end %>
 </center>
 </div>

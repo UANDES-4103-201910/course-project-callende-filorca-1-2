@@ -58,7 +58,11 @@
 
         <div class="field">
               <%= form.hidden_field :user_id, value: current_user.id %>
+              <% if @comment.post_id %>
+              <%= form.hidden_field :post_id, value: @comment.post_id %>
+              <%else%>
               <%= form.hidden_field :post_id, value: "#{params[:post_id]}" %>
+              <%end%>
             </div>
 
 
