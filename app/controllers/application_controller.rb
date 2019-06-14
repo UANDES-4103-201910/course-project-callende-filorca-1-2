@@ -6,7 +6,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
 protected
  def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:my_action) { |u| u.permit(:name,:email, :password, :name,:location, :admin,:sadmin,:biography, :city,:blacklist_id, :lastname ,:country) }
-   devise_parameter_sanitizer.permit(:account_update) { |u|    u.permit(:name,:email, :password, :name,:location, :admin,:sadmin,:biography, :city,:blacklist_id, :lastname ,:country,:current_password) }
+   devise_parameter_sanitizer.permit(:my_action) { |u| u.permit(:avatar,:name,:email, :password, :name,:location, :admin,:sadmin,:biography, :city,:blacklist_id, :lastname ,:country) }
+   devise_parameter_sanitizer.permit(:account_update) { |u|    u.permit(:avatar,:name,:email, :password, :name,:location, :admin,:sadmin,:biography, :city,:blacklist_id, :lastname ,:country,:current_password) }
  end
 end

@@ -132,8 +132,12 @@
 				      </div>
             <div class="col-sm-1">
               <div class="thumbnail">
+								<%if c.user.avatar.attached? %>
+								<%= image_tag(c.user.avatar, style:'width:100px')  %>
+								<% else %>
                 <img class="img-responsive user-photo" src="http://www.31minutos.cl/wp-content/uploads/2014/02/thumb-bodoque-300x300.jpg">
-              </div><!-- /thumbnail -->
+								<% end %>
+							</div><!-- /thumbnail -->
             </div><!-- /col-sm-1 -->
 
             <div class="col-sm-5">
