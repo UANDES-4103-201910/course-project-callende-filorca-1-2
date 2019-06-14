@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -39,7 +38,7 @@
         <div class="navbar-header">
           <a class="navbar-brand" href="/">Home</a>
         </div>
-      
+
         <% if user_signed_in? %>
         <ul class="navbar-header">
           <a class="navbar-brand" href="/walls">Wall</a>
@@ -57,7 +56,7 @@
         <% end %>
         <ul class="navbar-header navbar-right">
           <% if user_signed_in? %>
-            <a><%= link_to(current_user.email, "/users/edit" ,class: "navbar-brand") %></a>
+            <a><%= link_to(current_user.email, edit_user_registration_path ,class: "navbar-brand") %></a>
             <a><%= link_to('Logout', destroy_user_session_path, method: :delete , class: "navbar-brand") %></a>
 
           <% else %>
@@ -88,7 +87,9 @@
     <%= yield %>
   </body>
 </html>
-
+<div class="container">
+  <br>
+</div>
 <footer class="page-footer font-small blue">
 <br>
 <br>
