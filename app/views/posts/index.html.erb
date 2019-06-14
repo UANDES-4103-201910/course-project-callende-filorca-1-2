@@ -33,10 +33,8 @@
                     <div class="row rating-desc">
                         <div class="col-md-12">
 
-                            <span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                            </span><span class="glyphicon glyphicon-heart"></span><span class="glyphicon glyphicon-heart">
-                              </span><span class="glyphicon glyphicon-heart"></span><%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Upvote' : 'Upvotes'%>	<%= post.downvotes.count %> <%= (post.downvotes.count) == 1 ? 'Downvote' : 'Downvotes'%><span class="separator">|</span>
-                            <span class="glyphicon glyphicon-comment"></span>(<%= post.comment.count %> <%= (post.comment.count) == 1 ? 'Comment' : 'Comments'%>)
+                            <span class="glyphicon glyphicon-heart"></span>  <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Upvote' : 'Upvotes'%>	<%= post.downvotes.count %> <%= (post.downvotes.count) == 1 ? 'Downvote' : 'Downvotes'%><span class="separator">|</span>
+                            <span class="glyphicon glyphicon-comment"></span>  (<%= post.comment.count %> <%= (post.comment.count) == 1 ? 'Comment' : 'Comments'%>)
                         </div>
                     </div>
                 </div>

@@ -15,16 +15,18 @@ bl1 = Blacklist.find(1)
 bl2 = Blacklist.find(2)
 
 
-users = [User.new(location: 'Sudamerica', name: 'Felipe', biography: 'hola', password: '123456', email: 'fi1@miuandes.cl', city: 'Ovalle', country: 'Chile', lastname: 'Lorca', sadmin:true, blacklist:bl1) , User.new( location: 'Sudamerica', name: 'Juanito', biography: 'oli soy juan', password: '12341233', email: 'JP@miuandes.cl', city: 'Rancagua', country: 'Chile', lastname: 'Garcia', blacklist:bl2, sadmin:true), User.new( location: 'Europa', name: 'Maria', biography: 'salu2', password: '12341233', email: 'mjperez@miuandes.cl', city: 'Madrid', country: 'Espana', lastname: 'Perez', blacklist:bl1, sadmin:true)]
+users = [User.new(location: 'Sudamerica', name: 'Pedro', biography: 'hola', password: '123456', email: 'fi1@aaa.cl', city: 'Ovalle', country: 'Chile', lastname: 'Perez', sadmin:true, blacklist:bl1) ,User.new(location: 'Sudamerica', name: 'Felipe', biography: 'hola', password: '123456', email: 'fi1@miuandes.cl', city: 'Ovalle', country: 'Chile', lastname: 'Lorca', sadmin:true, blacklist:bl1) , User.new( location: 'Sudamerica', name: 'Juanito', biography: 'oli soy juan', password: '12341233', email: 'JP@miuandes.cl', city: 'Rancagua', country: 'Chile', lastname: 'Garcia', blacklist:bl2, sadmin:true), User.new( location: 'Europa', name: 'Maria', biography: 'salu2', password: '12341233', email: 'mjperez@miuandes.cl', city: 'Madrid', country: 'Espana', lastname: 'Perez', blacklist:bl1, sadmin:true)]
 
 for u in users do
 	u.save!
 end
 
 u = User.find(1)
+u2 = User.find(2)
 u3 = User.find(3)
 
-posts = [Post.new(title: 'Reclamo movistar' , description: 'No tengo señal hace mas de 20 dias y movistar no me da una solucion........',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u), Post.new( title: 'Reclamo Iphone' ,location: '1000000,200000',country: ' Chile', state: true,city: 'Santiago', description: 'Mal servicio, no responden, fui a cambiar la pantalla de mi iphone X y no me quisieron atender', user:u3)]
+posts = [Post.new(title: 'Reclamo movistar' , description: 'No funciona en ninguna parte',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u), Post.new( title: 'Enel' ,location: '1000000,200000',country: ' Chile', state: true,city: 'Santiago', description: 'Sin luz hace 2 meses', user:u3),Post.new(title: 'Entel' , description: 'No tengo señal hace mas de 20 dias y  no me dan una solucion........',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u), Post.new( title: 'Reclamo Iphone' ,location: '1000000,200000',country: ' Chile', state: true,city: 'Santiago', description: 'Mal servicio, no responden, fui a cambiar la pantalla de mi iphone X y no me quisieron atender', user:u3),Post.new(title: 'Reclamo movistar' , description: 'No funciona en ninguna parte',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u),Post.new(title: 'LG' , description: 'Tele en mal estado y no contestan',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u2),Post.new(title: 'Samsung' , description: 'Smartphone dejo de funcionar',location: '1000000,200000',country: ' Chile', state: true, city: 'Santiago',user:u3)]
+
 
 for p in posts do
 	p.save!
