@@ -15,7 +15,7 @@ bl1 = Blacklist.find(1)
 bl2 = Blacklist.find(2)
 
 
-users = [User.new(location: 'Sudamerica', name: 'Pedro', biography: 'hola', password: '123456', email: 'fi1@aaa.cl', city: 'Ovalle', country: 'Chile', lastname: 'Perez', sadmin:true, blacklist:bl1) ,User.new(location: 'Sudamerica', name: 'Felipe', biography: 'hola', password: '123456', email: 'fi1@miuandes.cl', city: 'Ovalle', country: 'Chile', lastname: 'Lorca', sadmin:true, blacklist:bl1) , User.new( location: 'Sudamerica', name: 'Juanito', biography: 'oli soy juan', password: '12341233', email: 'JP@miuandes.cl', city: 'Rancagua', country: 'Chile', lastname: 'Garcia', blacklist:bl2, sadmin:true), User.new( location: 'Europa', name: 'Maria', biography: 'salu2', password: '12341233', email: 'mjperez@miuandes.cl', city: 'Madrid', country: 'Espana', lastname: 'Perez', blacklist:bl1, sadmin:true)]
+users = [User.new(location: 'Sudamerica', name: 'Pedro', biography: 'hola', password: '123456', email: 'fi1@aaa.cl', city: 'Ovalle', country: 'Chile', lastname: 'Perez', sadmin:true, blacklist:bl1) ,User.new(location: 'Africa', name: 'Felipe', biography: 'hola', password: '123456', email: 'fi1@miuandes.cl', city: 'Ovalle', country: 'Chile', lastname: 'Lorca', sadmin:true, blacklist:bl1) , User.new( location: 'Sudamerica', name: 'Juanito', biography: 'oli soy juan', password: '12341233', email: 'JP@miuandes.cl', city: 'Rancagua', country: 'Chile', lastname: 'Garcia', blacklist:bl2, sadmin:true), User.new( location: 'Europa', name: 'Maria', biography: 'salu2', password: '12341233', email: 'mjperez@miuandes.cl', city: 'Madrid', country: 'Espana', lastname: 'Perez', blacklist:bl1, sadmin:true)]
 
 for u in users do
 	u.save!
